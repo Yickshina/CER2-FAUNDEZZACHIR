@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/css.css' %}">
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="{%url 'admin:index'%}" >Iniciar Sesión</a>
+    <img style="float: right" src="{% static 'core/images/cooltext423346859984687.png' %}" alt="Correos">
+</div>
+
+
+
+
+
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+</body>
+</html>

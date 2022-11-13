@@ -1,0 +1,72 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block tittle %}
+<h2>Envios</h2>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="container-fluid">
+        <div id="background">
+            <img src="{% static 'core/images/warehouse-industrial-logistics-companies-commercial-huge-distribution-high-shelves-bottom-view-191288522.jpg' %}" class="stretch" alt="">
+        </div>
+    <br />
+    </div>
+        <div class="container-fluid">
+            <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Correspondecias Recibidas</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="card card-body">
+                        <form method="get">
+                            {{ busqueda.form }}
+                            <button class="btn btn-primary" type="submit">
+                                Buscar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+              <br><br>
+              <div class="table-responsive">
+                <table class="table table-bordered" >
+                  <thead>
+                    <tr>
+                      <th>Fecha Recepcion</th>
+                      <th>Conserje</th>
+                      <th>Remitente</th>
+                      <th>Destinatario</th>
+                      <th>Residencia</th>
+                        <th>Dueño de la Residencia</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for correspondencia in correspondencias %}
+                      <tr>
+                        <td>{{ correspondencia.fechaRecepcion }}</td>
+                        <td>{{ correspondencia.conserje }}</td>
+                        <td>{{ correspondencia.remitente }}</td>
+                        <td>{{ correspondencia.destinatario }}</td>
+                        <td>{{ correspondencia.residencia }}</td>
+                      <td>{{ correspondencia.residencia.dueño }}</td>
+
+
+
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
